@@ -27,6 +27,7 @@ target_include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/../lib
 )
 
+target_link_libraries(gtver ${GTEST_BOTH_LIBRARIES}) 
 target_link_libraries(gtver libver)
 
 if (MSVC)
