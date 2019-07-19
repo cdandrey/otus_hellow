@@ -15,7 +15,7 @@ endif()
 add_subdirectory(src)
 add_subdirectory(lib)
 add_subdirectory(btest)
-add_subdirectory(gtest)
+#add_subdirectory(gtest)
 
 set(CPACK_GENERATOR DEB)
 

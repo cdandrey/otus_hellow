@@ -1,7 +1,7 @@
 #include "lib.h"
 #include "gtest/gtest.h"
 
-TEST_F(gtest_version_case,gtest_version){
+TEST(gtest_version_case,gtest_version){
 
     ASSERT_TRUE(version() > 0);
 }

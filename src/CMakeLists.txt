@@ -33,7 +33,7 @@ if (MSVC)
         /W4
     )
 
-else ()
+else()
 
     target_compile_options(
         ver

@@ -30,7 +30,7 @@ if (MSVC)
         PRIVATE
         /W4
     )
-else ()
+else()
     target_compile_options(
         libver
         PRIVATE

@@ -7,7 +7,6 @@ if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
 endif()
 
 if (DEFINED ENV{TRAVIS_BUILD_NUMBER})
-    message(STATUS TRAVIS_BUILD_NUMBER : $ENV{TRAVIS_BUILD_NUMBER})
     project(PrjBTest VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 else()
     project(PrjBTest VERSION 0.0.1)
@@ -26,9 +25,12 @@ set_target_properties(
 
 target_include_directories(
     tver
-    PRIVATE 
+    PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/../lib
+    ${Boost_INCLUDE_DIR}
 )
+
+message(STATUS BTEST SOURCE_DIR : ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(tver libver)
 
@@ -36,7 +38,6 @@ set_target_properties(
     tver
     PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
-    INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
 target_link_libraries(tver ${Boost_LIBRARIES})
@@ -47,7 +48,7 @@ if (MSVC)
         PRIVATE
         /W4
     )
-else ()
+else()
     target_compile_options(
         tver
         PRIVATE
