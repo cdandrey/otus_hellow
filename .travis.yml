@@ -5,14 +5,11 @@ before_script:
 
   #install google-test
 - sudo apt-get install libgtest-dev -y
-- cd /usr/src/googletest/googletest
-- sudo mkdir build
-- cd build
-- sudo cmake ..
+- sudo apt-get install cmake
+- cd /usr/src/gtest
+- sudo cmake CMakeLists.txt
 - sudo make
-- sudo cp libgtest* /usr/lib/
-- cd ..
-- sudo rm -rf build
+- sudo cp *.a /usr/lib
 - sudo mkdir /usr/local/lib/gtest/
 - sudo ln -s /usr/lib/libgtest.a /usr/local/lib/gtest/libgtest.a
 - sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/gtest/libgtest_main.a
