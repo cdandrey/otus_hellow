@@ -1,5 +1,5 @@
 #include "lib.h"
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 TEST(gtest_version_case,gtest_version){
 
