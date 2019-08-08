@@ -30,17 +30,14 @@ target_include_directories(
     ${Boost_INCLUDE_DIR}
 )
 
-message(STATUS BTEST SOURCE_DIR : ${CMAKE_CURRENT_SOURCE_DIR})
-
 target_link_libraries(tver libver)
+target_link_libraries(tver ${Boost_LIBRARIES})
 
 set_target_properties(
     tver
     PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
 )
-
-target_link_libraries(tver ${Boost_LIBRARIES})
 
 if (MSVC)
     target_compile_options(

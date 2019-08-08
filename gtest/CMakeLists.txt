@@ -8,9 +8,7 @@ else()
 endif()
 
 find_package(GTest REQUIRED)
-find_package(Threads)
-
-include_directories(${GTEST_INCLUDE_DIRS})
+find_package(Threads REQUIRED)
 
 add_executable(gtver gtest_version.cpp)
 
@@ -25,6 +23,7 @@ target_include_directories(
     gtver
     PRIVATE 
     ${CMAKE_CURRENT_SOURCE_DIR}/../lib
+    ${GTEST_INCLUDE_DIRS}
 )
 
 target_link_libraries(gtver ${GTEST_BOTH_LIBRARIES}) 
