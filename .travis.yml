@@ -6,7 +6,7 @@ before_script:
   #install google-test
 - sudo apt-get install libgtest-dev
 - cd /usr/src/gtest
-- sudo cmake CMakeLists.txt
+- sudo cmake
 - sudo make
 - sudo cp *.a /usr/lib
 - sudo mkdir /usr/local/lib/gtest/
