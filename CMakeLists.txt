@@ -16,7 +16,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 add_subdirectory(src)
 add_subdirectory(lib)
-//add_subdirectory(btest)
+#add_subdirectory(btest)
 add_subdirectory(gtest)
 
 set(CPACK_GENERATOR DEB)
