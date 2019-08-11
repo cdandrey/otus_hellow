@@ -7,10 +7,16 @@ else()
     project(PrjGTest VERSION 0.0.1)
 endif()
 
-find_package(GTest REQUIRED)
+find_package(gtest REQUIRED)
 find_package(Threads REQUIRED)
 
 add_executable(gtver gtest_version.cpp)
+
+include_directories( 
+    ${GTES_INCLUDE_DIRS}
+)
+
+message(STATUS GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIRS})
 
 set_target_properties(
     gtver
@@ -23,7 +29,6 @@ target_include_directories(
     gtver
     PRIVATE 
     ${CMAKE_CURRENT_SOURCE_DIR}/../lib
-    ${GTEST_INCLUDE_DIRS}
 )
 
 target_link_libraries(gtver ${GTEST_BOTH_LIBRARIES}) 
