@@ -7,7 +7,7 @@ else()
     project(PrjGTest VERSION 0.0.1)
 endif()
 
-find_package(gtest REQUIRED)
+find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
 
 add_executable(gtver gtest_version.cpp)
