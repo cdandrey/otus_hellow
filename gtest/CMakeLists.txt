@@ -30,6 +30,7 @@ target_include_directories(
 )
 
 target_link_libraries(gtver ${GTEST_BOTH_LIBRARIES}) 
+target_link_libraries(gtver ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(gtver libver)
 
 if (MSVC)
@@ -48,4 +49,4 @@ endif()
 
 enable_testing()
 
-add_test(gtver "gtest_version")
+add_test(gtver gtver)
