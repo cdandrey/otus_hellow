@@ -16,8 +16,6 @@ include_directories(
     ${GTES_INCLUDE_DIRS}
 )
 
-message(STATUS GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIRS})
-
 set_target_properties(
     gtver
     PROPERTIES
@@ -50,4 +48,4 @@ endif()
 
 enable_testing()
 
-add_test(gtver gtest_version)
+add_test(gtver "gtest_version")

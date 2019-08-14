@@ -7,7 +7,7 @@ before_script:
 - sudo apt-get install libgtest-dev
 - sudo apt-get install cmake # install cmake
 - cd /usr/src/gtest
-- sudo cmake -DBUILD_SHARED_LIBS=ON CMakeLists.txt
+- sudo cmake CMakeLists.txt
 - sudo make
 - sudo cp *.a /usr/lib
 - sudo mkdir /usr/local/lib/gtest
