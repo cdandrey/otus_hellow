@@ -1,16 +1,19 @@
 cmake_minimum_required(VERSION 3.2)
 
+set (PRJ_NAME prj_gtver)
+set (SOURCES gtest_version.cpp)
+
 if (DEFINED ENV{TRAVIS_BUILD_NUMBER})
     message(STATUS TRAVIS_BUILD_NUMBER : $ENV{TRAVIS_BUILD_NUMBER})
-    project(PrjGTest VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+    project(${PRJ_NAME} VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 else()
-    project(PrjGTest VERSION 0.0.1)
+    project(${PRJ_NAME} VERSION 0.0.1)
 endif()
 
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
 
-add_executable(gtver gtest_version.cpp)
+add_executable(gtver ${SOURCES})
 
 include_directories( 
     ${GTES_INCLUDE_DIRS}

@@ -2,21 +2,23 @@
 
 cmake_minimum_required(VERSION 3.2)
 
+set (PRJ_NAME prj_helloworld)
+
 if(DEFINED ENV{VCPKG_ROOT} AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
 endif()
 
 if (DEFINED ENV{TRAVIS_BUILD_NUMBER})
-    project(PrjHelloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+    project(${PRJ_NAME} VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 else()
-    project(PrjHelloworld VERSION 0.0.1)
+    project(${PRJ_NAME} VERSION 0.0.1)
 endif()
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 add_subdirectory(src)
 add_subdirectory(lib)
-#add_subdirectory(btest)
+add_subdirectory(btest)
 add_subdirectory(gtest)
 
 set(CPACK_GENERATOR DEB)
